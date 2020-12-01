@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Error from "next/error";
+import StoryList from "../components/StoryList";
 
 class Index extends Component {
   static getInitialProps = async ({ req }) => {
@@ -23,11 +24,7 @@ class Index extends Component {
     return (
       <div>
         <h1>Hacker News</h1>
-        <div>
-          {stories.map((story) => (
-            <h2 key={story.id}>{story.title}</h2>
-          ))}
-        </div>
+        <StoryList stories={stories} />
       </div>
     );
   }
